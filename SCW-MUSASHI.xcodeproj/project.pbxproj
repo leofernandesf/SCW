@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B30494721DD353DF002FA2B6 /* ChooseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30494711DD353DF002FA2B6 /* ChooseLanguageViewController.swift */; };
+		B30494741DD3698D002FA2B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30494731DD3698D002FA2B6 /* HomeViewController.swift */; };
+		B30494761DD3729C002FA2B6 /* SobreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30494751DD3729C002FA2B6 /* SobreViewController.swift */; };
+		B30494781DD374FE002FA2B6 /* MyCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30494771DD374FE002FA2B6 /* MyCellCollectionViewCell.swift */; };
 		B386794D1DD21E8200803D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386794C1DD21E8200803D3B /* AppDelegate.swift */; };
-		B386794F1DD21E8200803D3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386794E1DD21E8200803D3B /* ViewController.swift */; };
 		B38679521DD21E8200803D3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38679501DD21E8200803D3B /* Main.storyboard */; };
 		B38679551DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B38679531DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld */; };
 		B38679571DD21E8200803D3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B38679561DD21E8200803D3B /* Assets.xcassets */; };
 		B386795A1DD21E8200803D3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38679581DD21E8200803D3B /* LaunchScreen.storyboard */; };
 		B38679651DD21E8200803D3B /* SCW_MUSASHITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38679641DD21E8200803D3B /* SCW_MUSASHITests.swift */; };
 		B38679701DD21E8200803D3B /* SCW_MUSASHIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386796F1DD21E8200803D3B /* SCW_MUSASHIUITests.swift */; };
+		B386797E1DD2348D00803D3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386797D1DD2348D00803D3B /* LoginViewController.swift */; };
+		B38679801DD2350400803D3B /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386797F1DD2350400803D3B /* Layout.swift */; };
+		B38679821DD23AF400803D3B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38679811DD23AF400803D3B /* Helper.swift */; };
+		B3892DE61DD4A7050073C738 /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892DE51DD4A7050073C738 /* DetalhesViewController.swift */; };
+		B3892E251DD4B49F0073C738 /* EncaminharViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */; };
+		B3892E271DD4BE310073C738 /* AtribuirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892E261DD4BE310073C738 /* AtribuirViewController.swift */; };
+		B3892E291DD4EAA40073C738 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892E281DD4EAA40073C738 /* HomeTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +45,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B30494711DD353DF002FA2B6 /* ChooseLanguageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewController.swift; sourceTree = "<group>"; };
+		B30494731DD3698D002FA2B6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B30494751DD3729C002FA2B6 /* SobreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobreViewController.swift; sourceTree = "<group>"; };
+		B30494771DD374FE002FA2B6 /* MyCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		B38679491DD21E8200803D3B /* SCW-MUSASHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCW-MUSASHI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B386794C1DD21E8200803D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B386794E1DD21E8200803D3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B38679511DD21E8200803D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B38679541DD21E8200803D3B /* SCW_MUSASHI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SCW_MUSASHI.xcdatamodel; sourceTree = "<group>"; };
 		B38679561DD21E8200803D3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -49,6 +62,13 @@
 		B386796B1DD21E8200803D3B /* SCW-MUSASHIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SCW-MUSASHIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B386796F1DD21E8200803D3B /* SCW_MUSASHIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SCW_MUSASHIUITests.swift; sourceTree = "<group>"; };
 		B38679711DD21E8200803D3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B386797D1DD2348D00803D3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B386797F1DD2350400803D3B /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		B38679811DD23AF400803D3B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		B3892DE51DD4A7050073C738 /* DetalhesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
+		B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncaminharViewController.swift; sourceTree = "<group>"; };
+		B3892E261DD4BE310073C738 /* AtribuirViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtribuirViewController.swift; sourceTree = "<group>"; };
+		B3892E281DD4EAA40073C738 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,12 +120,22 @@
 			isa = PBXGroup;
 			children = (
 				B386794C1DD21E8200803D3B /* AppDelegate.swift */,
-				B386794E1DD21E8200803D3B /* ViewController.swift */,
 				B38679501DD21E8200803D3B /* Main.storyboard */,
 				B38679561DD21E8200803D3B /* Assets.xcassets */,
 				B38679581DD21E8200803D3B /* LaunchScreen.storyboard */,
 				B386795B1DD21E8200803D3B /* Info.plist */,
 				B38679531DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld */,
+				B386797D1DD2348D00803D3B /* LoginViewController.swift */,
+				B386797F1DD2350400803D3B /* Layout.swift */,
+				B38679811DD23AF400803D3B /* Helper.swift */,
+				B30494711DD353DF002FA2B6 /* ChooseLanguageViewController.swift */,
+				B30494731DD3698D002FA2B6 /* HomeViewController.swift */,
+				B30494751DD3729C002FA2B6 /* SobreViewController.swift */,
+				B30494771DD374FE002FA2B6 /* MyCellCollectionViewCell.swift */,
+				B3892DE51DD4A7050073C738 /* DetalhesViewController.swift */,
+				B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */,
+				B3892E261DD4BE310073C738 /* AtribuirViewController.swift */,
+				B3892E281DD4EAA40073C738 /* HomeTableViewCell.swift */,
 			);
 			path = "SCW-MUSASHI";
 			sourceTree = "<group>";
@@ -263,8 +293,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3892E271DD4BE310073C738 /* AtribuirViewController.swift in Sources */,
+				B386797E1DD2348D00803D3B /* LoginViewController.swift in Sources */,
+				B3892E291DD4EAA40073C738 /* HomeTableViewCell.swift in Sources */,
+				B3892E251DD4B49F0073C738 /* EncaminharViewController.swift in Sources */,
+				B38679801DD2350400803D3B /* Layout.swift in Sources */,
+				B38679821DD23AF400803D3B /* Helper.swift in Sources */,
+				B30494721DD353DF002FA2B6 /* ChooseLanguageViewController.swift in Sources */,
 				B38679551DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld in Sources */,
-				B386794F1DD21E8200803D3B /* ViewController.swift in Sources */,
+				B30494781DD374FE002FA2B6 /* MyCellCollectionViewCell.swift in Sources */,
+				B30494741DD3698D002FA2B6 /* HomeViewController.swift in Sources */,
+				B30494761DD3729C002FA2B6 /* SobreViewController.swift in Sources */,
+				B3892DE61DD4A7050073C738 /* DetalhesViewController.swift in Sources */,
 				B386794D1DD21E8200803D3B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +550,7 @@
 				B38679761DD21E8200803D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B38679771DD21E8200803D3B /* Build configuration list for PBXNativeTarget "SCW-MUSASHITests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +559,7 @@
 				B38679791DD21E8200803D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B386797A1DD21E8200803D3B /* Build configuration list for PBXNativeTarget "SCW-MUSASHIUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +568,7 @@
 				B386797C1DD21E8200803D3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
