@@ -10,6 +10,8 @@ import UIKit
 
 class ChooseLanguageViewController: UIViewController {
 
+    @IBOutlet weak var lbLanguage2: UILabel!
+    @IBOutlet weak var lbLanguage1: UILabel!
     @IBOutlet weak var bt1: UIButton!
     @IBOutlet weak var bt2: UIButton!
     var verificador = false
@@ -21,14 +23,40 @@ class ChooseLanguageViewController: UIViewController {
         super.viewDidLoad()
         bt1.setImage(checkOff, for: .normal)
         bt2.setImage(checkOn, for: .normal)
+        Helper.GET(urlString: "http://191.168.20.202/scw/ws_config/get_labels") { (jsonRecebe) in
+            self.separa(json: jsonRecebe)
+        }
         // Do any additional setup after loading the view.
     }
+    
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         
         
+    }
+    
+    func separa(json: Dictionary<String, AnyObject>) {
+        let x = json["data"] as! [[String: Any]]
+        print(x.count)
+        for y in x {
+            if let query = y["field"] as? String {
+                if query == "lang_selection" {
+                    if let value = y["value"]as? [String] {
+                        print(value)
+                        DispatchQueue.main.async {
+                            self.lbLanguage1.text = value[0]
+                            self.lbLanguage2.text = value[1]
+                        }
+                        
+                    }
+                } else {
+                    
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -25,6 +25,8 @@
 		B3892E251DD4B49F0073C738 /* EncaminharViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */; };
 		B3892E271DD4BE310073C738 /* AtribuirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892E261DD4BE310073C738 /* AtribuirViewController.swift */; };
 		B3892E291DD4EAA40073C738 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892E281DD4EAA40073C738 /* HomeTableViewCell.swift */; };
+		B3A2EAF61DD609C2008C0936 /* ComentarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2EAF51DD609C2008C0936 /* ComentarViewController.swift */; };
+		B3A2EAFD1DD615DC008C0936 /* Cell1TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A2EAFC1DD615DC008C0936 /* Cell1TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncaminharViewController.swift; sourceTree = "<group>"; };
 		B3892E261DD4BE310073C738 /* AtribuirViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtribuirViewController.swift; sourceTree = "<group>"; };
 		B3892E281DD4EAA40073C738 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		B3A2EAF51DD609C2008C0936 /* ComentarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComentarViewController.swift; sourceTree = "<group>"; };
+		B3A2EAFC1DD615DC008C0936 /* Cell1TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell1TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,23 +123,21 @@
 		B386794B1DD21E8200803D3B /* SCW-MUSASHI */ = {
 			isa = PBXGroup;
 			children = (
+				B3A2EAFB1DD61438008C0936 /* Detalhes */,
+				B3A2EAFA1DD6140D008C0936 /* Home */,
+				B3A2EAF91DD613EF008C0936 /* Helpers */,
+				B3A2EAF81DD613D4008C0936 /* EscolherLinguagem */,
+				B3A2EAF71DD613C3008C0936 /* Login */,
 				B386794C1DD21E8200803D3B /* AppDelegate.swift */,
 				B38679501DD21E8200803D3B /* Main.storyboard */,
 				B38679561DD21E8200803D3B /* Assets.xcassets */,
 				B38679581DD21E8200803D3B /* LaunchScreen.storyboard */,
 				B386795B1DD21E8200803D3B /* Info.plist */,
 				B38679531DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld */,
-				B386797D1DD2348D00803D3B /* LoginViewController.swift */,
-				B386797F1DD2350400803D3B /* Layout.swift */,
-				B38679811DD23AF400803D3B /* Helper.swift */,
-				B30494711DD353DF002FA2B6 /* ChooseLanguageViewController.swift */,
-				B30494731DD3698D002FA2B6 /* HomeViewController.swift */,
 				B30494751DD3729C002FA2B6 /* SobreViewController.swift */,
-				B30494771DD374FE002FA2B6 /* MyCellCollectionViewCell.swift */,
-				B3892DE51DD4A7050073C738 /* DetalhesViewController.swift */,
 				B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */,
 				B3892E261DD4BE310073C738 /* AtribuirViewController.swift */,
-				B3892E281DD4EAA40073C738 /* HomeTableViewCell.swift */,
+				B3A2EAF51DD609C2008C0936 /* ComentarViewController.swift */,
 			);
 			path = "SCW-MUSASHI";
 			sourceTree = "<group>";
@@ -156,6 +158,50 @@
 				B38679711DD21E8200803D3B /* Info.plist */,
 			);
 			path = "SCW-MUSASHIUITests";
+			sourceTree = "<group>";
+		};
+		B3A2EAF71DD613C3008C0936 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B386797D1DD2348D00803D3B /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		B3A2EAF81DD613D4008C0936 /* EscolherLinguagem */ = {
+			isa = PBXGroup;
+			children = (
+				B30494711DD353DF002FA2B6 /* ChooseLanguageViewController.swift */,
+			);
+			name = EscolherLinguagem;
+			sourceTree = "<group>";
+		};
+		B3A2EAF91DD613EF008C0936 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B386797F1DD2350400803D3B /* Layout.swift */,
+				B38679811DD23AF400803D3B /* Helper.swift */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		B3A2EAFA1DD6140D008C0936 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B3892E281DD4EAA40073C738 /* HomeTableViewCell.swift */,
+				B30494771DD374FE002FA2B6 /* MyCellCollectionViewCell.swift */,
+				B30494731DD3698D002FA2B6 /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		B3A2EAFB1DD61438008C0936 /* Detalhes */ = {
+			isa = PBXGroup;
+			children = (
+				B3892DE51DD4A7050073C738 /* DetalhesViewController.swift */,
+				B3A2EAFC1DD615DC008C0936 /* Cell1TableViewCell.swift */,
+			);
+			name = Detalhes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,12 +340,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3892E271DD4BE310073C738 /* AtribuirViewController.swift in Sources */,
+				B3A2EAF61DD609C2008C0936 /* ComentarViewController.swift in Sources */,
 				B386797E1DD2348D00803D3B /* LoginViewController.swift in Sources */,
 				B3892E291DD4EAA40073C738 /* HomeTableViewCell.swift in Sources */,
 				B3892E251DD4B49F0073C738 /* EncaminharViewController.swift in Sources */,
 				B38679801DD2350400803D3B /* Layout.swift in Sources */,
 				B38679821DD23AF400803D3B /* Helper.swift in Sources */,
 				B30494721DD353DF002FA2B6 /* ChooseLanguageViewController.swift in Sources */,
+				B3A2EAFD1DD615DC008C0936 /* Cell1TableViewCell.swift in Sources */,
 				B38679551DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld in Sources */,
 				B30494781DD374FE002FA2B6 /* MyCellCollectionViewCell.swift in Sources */,
 				B30494741DD3698D002FA2B6 /* HomeViewController.swift in Sources */,

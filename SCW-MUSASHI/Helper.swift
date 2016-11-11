@@ -82,10 +82,8 @@ class Helper {
     }
     
     
-    static func GET(urlString: String,completion: @escaping (_ chamadas: [[String: Any]], _ consultas: [[String: Any]])-> Void) {
+    static func GET(urlString: String,completion: @escaping (_ chamadas: Dictionary<String, AnyObject> )-> Void) {
         
-        var chamadas = [[String: Any]]()
-        var consultas = [[String: Any]]()
         var request = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = "GET"
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -102,17 +100,19 @@ class Helper {
                 
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, AnyObject>
-                    let x = json["data"] as! [[String: Any]]
-                    for y in x {
-                        if let query = y["query"] as? Int {
-                            if query == 1 {
-                                chamadas.append(y)
-                            } else {
-                                consultas.append(y)
-                            }
-                        }
-                    }
-                    completion(chamadas,consultas)
+//                    let x = json["data"] as! [[String: Any]]
+//                    for y in x {
+//                        if let query = y["query"] as? Int {
+//                            if query == 1 {
+//                                chamadas.append(y)
+//                            } else {
+//                                consultas.append(y)
+//                            }
+//                        }
+//                    }
+//                    print(consultas.count)
+//                    print(chamadas.count)
+                    completion(json)
                     
                     
                     

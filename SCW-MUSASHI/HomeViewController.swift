@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     var chamadas : [[String: Any]]?
     var consultas: [[String: Any]]?
     var mostrarInformacoes: [[String: Any]]?
+    var envia: [String: Any]!
     let defaults = UserDefaults.standard
     var cont = 2
     var index = IndexPath(item: 0, section: 0)
@@ -26,29 +27,26 @@ class HomeViewController: UIViewController {
         if let contMenu = defaults.object(forKey: "contMenu") as? Int {
             cont = contMenu
         }
+        self.myTable.tableFooterView = UIView(frame: .zero)
         // Do any additional setup after loading the view.
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        DispatchQueue.main.async {
-            self.myTable.delegate = self
-            self.myTable.dataSource = self
-            self.myTable.tableFooterView = UIView(frame: .zero)
-        }
         
-        Helper.GET(urlString: "http://191.168.20.202/scw/ws_issue/show") { (chamadas, consultas) in
-            self.chamadas = chamadas
-            self.consultas = consultas
-            print("chamadas: \(self.chamadas?.count) - consultas: \(self.consultas?.count)")
-            if self.index.item == 0 {
-                self.mostrarInformacoes = self.chamadas
-            } else {
-                self.mostrarInformacoes = self.consultas
-            }
-            DispatchQueue.main.async {
-                self.myTable.reloadData()
-            }
+        Helper.GET(urlString: "http://191.168.20.202/scw/ws_issue/show") { (recebeJson) in
+//            self.chamadas = chamadas
+//            self.consultas = consultas
+//            print("chamadas: \(self.chamadas?.count) - consultas: \(self.consultas?.count)")
+//            if self.index.item == 0 {
+//                self.mostrarInformacoes = self.chamadas
+//            } else {
+//                self.mostrarInformacoes = self.consultas
+//            }
+//            DispatchQueue.main.async {
+//                self.myTable.reloadData()
+//            }
+            self.separaChamadas(json: recebeJson)
             
         }
         
@@ -66,6 +64,30 @@ class HomeViewController: UIViewController {
         
         
         
+    }
+    
+    func separaChamadas(json: Dictionary<String, AnyObject>) {
+        let x = json["data"] as! [[String: Any]]
+        chamadas = [[String: Any]]()
+        consultas = [[String: Any]]()
+        for y in x {
+            if let query = y["query"] as? Int {
+                if query == 1 {
+                    self.chamadas?.append(y)
+                } else {
+                    self.consultas?.append(y)
+                }
+            }
+        }
+        print("chamadas: \(self.chamadas?.count) - consultas: \(self.consultas?.count)")
+        if self.index.item == 0 {
+            self.mostrarInformacoes = self.chamadas
+        } else if self.index.item == 1{
+            self.mostrarInformacoes = self.consultas
+        }
+        DispatchQueue.main.async {
+            self.myTable.reloadData()
+        }
     }
 
     @IBAction func opcoes(_ sender: AnyObject) {
@@ -103,6 +125,13 @@ class HomeViewController: UIViewController {
     func alertControllerBackgroundTapped()
     {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detalhe" {
+            let vc = segue.destination as! DetalhesViewController
+            vc.recebe = envia
+        }
     }
     /*
     // MARK: - Navigation
@@ -171,6 +200,7 @@ extension HomeViewController : UITableViewDataSource {
 extension HomeViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
+        self.envia = mostrarInformacoes?[indexPath.row]
         self.performSegue(withIdentifier: "detalhe", sender: self)
     }
 }

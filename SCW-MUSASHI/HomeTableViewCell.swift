@@ -25,8 +25,14 @@ class HomeTableViewCell: UITableViewCell {
             }
             
             if let data = informacoes?["created"] as? String {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+                let myDate = dateFormatter.date(from: data)!
                 
-                lbData.text = data
+                dateFormatter.dateFormat = "dd/MM/YYYY"
+                let somedateString = dateFormatter.string(from: myDate)
+                
+                lbData.text = somedateString
             }
             
         }
