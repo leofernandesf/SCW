@@ -10,13 +10,33 @@ import UIKit
 
 class Cell1TableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lbSetor: UILabel!
     @IBOutlet weak var lbLinha: UILabel!
     @IBOutlet weak var lbOperador: UILabel!
     @IBOutlet weak var ldData: UILabel!
     var informacoes: [String: Any]? {
         didSet {
+            if let operador = informacoes?["employee_name"] as? String {
+                lbOperador.text = operador
+            }
             
+            if let operador = informacoes?["employee_name"] as? String {
+                lbOperador.text = operador
+            }
+            
+            if let linha = informacoes?["cost_center"] as? Int {
+                lbLinha.text = "\(linha)"
+            }
+            
+            if let data = informacoes?["created"] as? String {
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "YYYY-MM-dd HH:mm:ss"
+                let myDate = dateFormatter.date(from: data)!
+                
+                dateFormatter.dateFormat = "dd/MM/YYYY - HH:mm"
+                let somedateString = dateFormatter.string(from: myDate)
+                
+                ldData.text = somedateString
+            }
         }
     }
     override func awakeFromNib() {

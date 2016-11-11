@@ -11,17 +11,27 @@ import UIKit
 class ComentarViewController: UIViewController {
     @IBOutlet weak var lbTitulo: UILabel!
     @IBOutlet weak var tvComentario: UITextView!
-
-    var titulo: String!
+    var idIssue: Int!
+    var idUser = Int()
+    var titulo: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        lbTitulo.text = titulo
+        print(titulo)
+        
+        if let user = titulo {
+            lbTitulo.text = "#\(user)"
+        }
+        
         tvComentario.becomeFirstResponder()
         tvComentario.layer.borderWidth = 1.0
         tvComentario.layer.borderColor = UIColor.white.cgColor
         tvComentario.layer.cornerRadius = 5
         tvComentario.clipsToBounds = true
+        
+        if let id = idIssue {
+            idIssue = id
+        }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -34,6 +44,25 @@ class ComentarViewController: UIViewController {
         _ = self.navigationController?.popViewController(animated: true)
     }
 
+    @IBAction func enviarComent(_ sender: AnyObject) {
+        print(idIssue)
+        if let id = idIssue {
+            let user = titulo as! Int
+            let url = "http://191.168.20.202/scw/ws_issue/new_comment/\(id)"
+            print(url)
+            let postString = "{\"success\":\"true\", \"data\":{\"user\":\"\(user)\", \"comment\":\"\(tvComentario.text!)\"}}"
+            Helper.POST(urlString: url, postString: postString, completion: { (sucess) in
+                if let verificador = sucess["success"] as? Int {
+                    if verificador == 1 {
+                        _ = self.navigationController?.popViewController(animated: true)
+                    }
+                    
+                }
+            })
+        }
+        
+        
+    }
     /*
     // MARK: - Navigation
 

@@ -16,7 +16,8 @@ class HomeTableViewCell: UITableViewCell {
     @IBOutlet weak var lbData: UILabel!
     var informacoes: [String: Any]? {
         didSet {
-            if let user = informacoes?["employee"] {
+            print(informacoes?["employee"])
+            if let user = informacoes?["employee"] as? Int {
                 lbUser.text = "#\(user)"
             }
             

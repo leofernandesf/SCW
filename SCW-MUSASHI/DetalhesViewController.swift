@@ -21,7 +21,9 @@ class DetalhesViewController: UIViewController {
         let image = Layout.sizeImage(width: 24, height: 24, image: #imageLiteral(resourceName: "share2"))
         btShare.setImage(image, for: .normal)
         let usuario = recebe["employee"] as! Int
+        print(usuario)
         self.lbUsiario.text = "#\(usuario)"
+        myTable.tableFooterView = UIView(frame: .zero)
 //        if let title = recebe["employee"] as? String {
 //            print(title)
 //            self.lbUsiario.text = title
@@ -55,9 +57,33 @@ class DetalhesViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "comentar" {
             let vc = segue.destination as! ComentarViewController
-            vc.titulo = self.lbUsiario.text
+            if let usuario = recebe["employee"] as? Int {
+                vc.titulo = usuario
+            }
+            
+            if let id = recebe["id"] as? Int {
+                vc.idIssue = id
+            }
+            
         }
     }
     
 
+}
+
+
+extension DetalhesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellDetalhe") as! Cell1TableViewCell
+        cell.informacoes = recebe
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+}
+
+extension DetalhesViewController: UITableViewDelegate {
+    
 }

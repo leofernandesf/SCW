@@ -11,8 +11,8 @@ import UIKit
 class Helper {
     
     
-    static func POST(urlString: String, login: String, senha: String,completion: @escaping (_ error: Int, _ prifileID: Dictionary<String, AnyObject>)-> Void) {
-        let postString = "{\"success\":\"true\", \"data\":{\"user\":\"\(login)\", \"pass\":\"\(senha)\"}}"
+    static func POST(urlString: String, postString: String,completion: @escaping (_ prifileID: Dictionary<String, AnyObject>)-> Void) {
+        
         print(postString)
         var request = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = "POST"
@@ -36,19 +36,18 @@ class Helper {
                 print("response = \(response)")
                 
             } else {
-                
                 do {
                     
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, AnyObject>
-
-                    let success = json["success"] as! Int
-                    var userData = Dictionary<String, AnyObject>()
-                    if success == 1 {
-                        userData = json["data"] as! Dictionary<String, AnyObject>
-                        //print(userData)
-                    }
                     
-                    completion(success,userData)
+//                    let success = json["success"] as! Int
+//                    var userData = Dictionary<String, AnyObject>()
+//                    if success == 1 {
+//                        userData = json["data"] as! Dictionary<String, AnyObject>
+//                        //print(userData)
+//                    }
+                    
+                    completion(json)
                     
                 } catch let jsonError {
                     print(jsonError)

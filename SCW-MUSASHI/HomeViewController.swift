@@ -20,6 +20,7 @@ class HomeViewController: UIViewController {
     let defaults = UserDefaults.standard
     var cont = 2
     var index = IndexPath(item: 0, section: 0)
+    let titulos = ["Consultas", "Chamados", "Aprovados"]
     override func viewDidLoad() {
         super.viewDidLoad()
         let image = Layout.sizeImage(width: 20, height: 20, image: #imageLiteral(resourceName: "ic_search"))
@@ -147,7 +148,8 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCellCollectionViewCell
+        cell.lbTitle.text = titulos[indexPath.item]
         return cell
     }
     

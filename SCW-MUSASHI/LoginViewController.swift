@@ -32,20 +32,28 @@ class LoginViewController: UIViewController {
     
     @IBAction func Entrar(_ sender: AnyObject) {
         let url = "http://191.168.20.202/scw/ws_mobile/login/"
-        Helper.POST(urlString: url, login: tfEmail.text!, senha: tfSenha.text!) { (success, userInformatios) in
-            if success == 1 {
-                let job_tittle = userInformatios["job_tittle"] as! String
-                if job_tittle == "Admin" || job_tittle == "Admin" {
-                    self.defaults.set(3, forKey: "contMenu")
-                } else {
-                    self.defaults.set(2, forKey: "contMenu")
-                }
-                print(self.defaults.object(forKey: "contMenu"))
-                DispatchQueue.main.async {
-                    self.performSegue(withIdentifier: "logado", sender: self)
-                }
-            }
+        let postString = "{\"success\":\"true\", \"data\":{\"user\":\"\(tfEmail.text!)\", \"pass\":\"\(tfSenha.text!)\"}}"
+        Helper.POST(urlString: url, postString: postString) { (success) in
+            self.verificar(strings: success)
             
+        }
+    }
+    
+    func verificar(strings: [String: Any]) {
+        let success = strings["success"] as! Int
+        var userData = Dictionary<String, AnyObject>()
+        if success == 1 {
+            userData = strings["data"] as! Dictionary<String, AnyObject>
+            let job_tittle = userData["job_tittle"] as! String
+            if job_tittle == "Admin" || job_tittle == "Admin" {
+                self.defaults.set(3, forKey: "contMenu")
+            } else {
+                self.defaults.set(2, forKey: "contMenu")
+            }
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "logado", sender: self)
+            }
+            //print(userData)
         }
     }
 
