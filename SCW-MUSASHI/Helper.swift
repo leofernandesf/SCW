@@ -11,19 +11,19 @@ import UIKit
 class Helper {
     
     
-    static func POST(urlString: String, postString: String,completion: @escaping (_ prifileID: Dictionary<String, AnyObject>)-> Void) {
+    static func POST(urlString: String, postString: [String : Any],completion: @escaping (_ prifileID: Dictionary<String, AnyObject>)-> Void) {
         
         print(postString)
         var request = URLRequest(url: URL(string: urlString)!)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = postString.data(using: String.Encoding.utf8)
-//        do {
-//            let json = try JSONSerialization.data(withJSONObject: params, options: [])
-//            request.httpBody = json
-//        } catch let jsonError {
-//            print(jsonError)
-//        }
+        //request.httpBody = postString.data(using: String.Encoding.utf8)
+        do {
+            let json = try JSONSerialization.data(withJSONObject: postString, options: [])
+            request.httpBody = json
+        } catch let jsonError {
+            print(jsonError)
+        }
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {                                                 // check for fundamental networking error
@@ -96,7 +96,6 @@ class Helper {
                 print("response = \(response)")
                 
             }else {
-                
                 do {
                     let json = try JSONSerialization.jsonObject(with: data, options: []) as! Dictionary<String, AnyObject>
 //                    let x = json["data"] as! [[String: Any]]
@@ -162,5 +161,28 @@ extension UIColor {
         // Scan hex value
         scanner.scanHexInt32(&hexInt)
         return hexInt
+    }
+}
+
+
+extension UIView {
+    func showAnimation(view:UIView) {
+        view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        view.alpha = 0.0
+        UIView.animate(withDuration: 0.25) {
+            view.alpha = 1.0
+            view.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+    }
+    
+    func removeAnimate(view: UIView) {
+        UIView.animate(withDuration: 0.25, animations: {
+            view.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+            view.alpha = 0.0
+            }, completion: { (finished: Bool) in
+                if finished {
+                    view.removeFromSuperview()
+                }
+        })
     }
 }

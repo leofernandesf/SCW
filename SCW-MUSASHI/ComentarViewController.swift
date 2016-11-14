@@ -47,14 +47,24 @@ class ComentarViewController: UIViewController {
     @IBAction func enviarComent(_ sender: AnyObject) {
         print(idIssue)
         if let id = idIssue {
-            let user = titulo as! Int
+            let user = titulo as Int
+            let parameters: [String: Any] = [
+                "success" : true,
+                "data": [
+                    "user" : user,
+                    "comment": tvComentario.text!
+                ]
+                
+            ]
             let url = "http://191.168.20.202/scw/ws_issue/new_comment/\(id)"
-            print(url)
-            let postString = "{\"success\":\"true\", \"data\":{\"user\":\"\(user)\", \"comment\":\"\(tvComentario.text!)\"}}"
-            Helper.POST(urlString: url, postString: postString, completion: { (sucess) in
+            //let postString = "{\"success\":\"true\", \"data\":{\"user\":\"\(user)\", \"comment\":\"\(tvComentario.text!)\"}}"
+            Helper.POST(urlString: url, postString: parameters, completion: { (sucess) in
                 if let verificador = sucess["success"] as? Int {
                     if verificador == 1 {
-                        _ = self.navigationController?.popViewController(animated: true)
+                        DispatchQueue.main.async {
+                            _ = self.navigationController?.popViewController(animated: true)
+                        }
+                        
                     }
                     
                 }

@@ -36,3 +36,22 @@ class AtribuirViewController: UIViewController {
     */
 
 }
+
+extension AtribuirViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellAtri") as! atribuirTableViewCell
+        
+        let viewCustom = UIView()
+        viewCustom.backgroundColor = UIColor.clear
+        cell.selectedBackgroundView = viewCustom
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 4
+    }
+}
+
+extension AtribuirViewController: UITabBarDelegate {
+    
+}

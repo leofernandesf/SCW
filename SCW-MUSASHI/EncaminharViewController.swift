@@ -10,10 +10,33 @@ import UIKit
 
 class EncaminharViewController: UIViewController {
 
+    @IBOutlet weak var myTable: UITableView!
+    var node = 0
+    var nodes : [[String : Any]]?
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        Helper.GET(urlString: "http://191.168.20.202/scw/ws_toten/get_issues_categories") { (result) in
+            self.mostrarNodes(pais: result)
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    func mostrarNodes(pais: [String : Any]) {
+        let datas = pais["data"] as! [[String: Any]]
+        self.nodes = [[String : Any]]()
+        for data in datas {
+            if let nodee = data["node"] as? Int {
+                if nodee == node {
+                    self.nodes?.append(data)
+                }
+            }
+        }
+        
+        DispatchQueue.main.async {
+            self.myTable.reloadData()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,3 +64,25 @@ class EncaminharViewController: UIViewController {
     */
 
 }
+
+
+extension EncaminharViewController : UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellEnc") as! EncaminharTableViewCell
+        cell.informacao = nodes?[indexPath.row]
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return nodes?.count ?? 0
+    }
+}
+
+extension EncaminharViewController : UITableViewDelegate {
+    
+}
+
+
+
+

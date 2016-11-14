@@ -14,6 +14,7 @@ class DetalhesViewController: UIViewController {
     @IBOutlet weak var lbUsiario: UILabel!
     @IBOutlet weak var myTable: UITableView!
     
+    @IBOutlet weak var btReject: UIButton!
     
     var recebe: [String: Any]!
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class DetalhesViewController: UIViewController {
         print(usuario)
         self.lbUsiario.text = "#\(usuario)"
         myTable.tableFooterView = UIView(frame: .zero)
+        
 //        if let title = recebe["employee"] as? String {
 //            print(title)
 //            self.lbUsiario.text = title
@@ -74,13 +76,28 @@ class DetalhesViewController: UIViewController {
 
 extension DetalhesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellDetalhe") as! Cell1TableViewCell
-        cell.informacoes = recebe
+        var cell = UITableViewCell()
+        if indexPath.row == 0 {
+            let Customcell = tableView.dequeueReusableCell(withIdentifier: "cellDetalhe") as! Cell1TableViewCell
+            Customcell.informacoes = recebe
+            cell = Customcell
+        } else if indexPath.row == 1 {
+            let Customcell = tableView.dequeueReusableCell(withIdentifier: "cellDetalhe2") as! atribuirTableViewCell2
+            Customcell.informacoes = recebe
+            cell = Customcell
+        } else if indexPath.row == 2 {
+            let Customcell = tableView.dequeueReusableCell(withIdentifier: "cellDetalhe3") as! Cell3TableViewCell
+            if let id = recebe["id"] as? Int {
+                Customcell.id = id
+            }
+            cell = Customcell
+        }
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 3
     }
 }
 

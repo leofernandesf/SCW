@@ -28,12 +28,30 @@ class LoginViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         Layout.tfLayout(tfs: [tfEmail,tfSenha])
+        print(defaults.object(forKey: "logado"))
+        
+        let verificador = defaults.object(forKey: "logado") as? Int
+        print(verificador)
+        if verificador == 1 {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "home") as!HomeViewController
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        
     }
     
     @IBAction func Entrar(_ sender: AnyObject) {
         let url = "http://191.168.20.202/scw/ws_mobile/login/"
-        let postString = "{\"success\":\"true\", \"data\":{\"user\":\"\(tfEmail.text!)\", \"pass\":\"\(tfSenha.text!)\"}}"
-        Helper.POST(urlString: url, postString: postString) { (success) in
+        //let postString = "{\"success\":\"true\", \"data\":{\"user\":\"\(tfEmail.text!)\", \"pass\":\"\(tfSenha.text!)\"}}"
+        
+        let parameters: [String: Any] = [
+            "success" : true,
+            "data": [
+                "user" : tfEmail.text!,
+                "pass": tfSenha.text!
+            ]
+            
+        ]
+        Helper.POST(urlString: url, postString: parameters) { (success) in
             self.verificar(strings: success)
             
         }
@@ -43,6 +61,7 @@ class LoginViewController: UIViewController {
         let success = strings["success"] as! Int
         var userData = Dictionary<String, AnyObject>()
         if success == 1 {
+            print(success)
             userData = strings["data"] as! Dictionary<String, AnyObject>
             let job_tittle = userData["job_tittle"] as! String
             if job_tittle == "Admin" || job_tittle == "Admin" {
@@ -51,7 +70,9 @@ class LoginViewController: UIViewController {
                 self.defaults.set(2, forKey: "contMenu")
             }
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "logado", sender: self)
+                self.defaults.set(1, forKey: "logado")
+                let vc = self.storyboard!.instantiateViewController(withIdentifier: "chooseLanguage") as! ChooseLanguageViewController
+                self.navigationController?.pushViewController(vc, animated: true)
             }
             //print(userData)
         }

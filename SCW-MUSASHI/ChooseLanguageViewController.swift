@@ -70,6 +70,16 @@ class ChooseLanguageViewController: UIViewController {
         
     }
 
+    @IBAction func entrar(_ sender: AnyObject) {
+        print(navigationController?.viewControllers.count)
+        if (navigationController?.viewControllers[1].isKind(of: HomeViewController.self))! {
+            _ = self.navigationController?.popViewController(animated: true)
+        } else {
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "home") as! HomeViewController
+            self.navigationController?.pushViewController(vc, animated: false)
+        }
+        
+    }
     @IBAction func acao2(_ sender: AnyObject) {
 
         selectedButton = 2

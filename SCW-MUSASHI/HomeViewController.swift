@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
         let image = Layout.sizeImage(width: 20, height: 20, image: #imageLiteral(resourceName: "ic_search"))
         ptSearch.setImage(image, for: .normal)
         if let contMenu = defaults.object(forKey: "contMenu") as? Int {
+            print(contMenu)
             cont = contMenu
         }
         self.myTable.tableFooterView = UIView(frame: .zero)
@@ -100,7 +101,9 @@ class HomeViewController: UIViewController {
         let alert: UIAlertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
         let idioma =  UIAlertAction(title: "Idioma", style: .default) { UIAlertAction in
-            //self.camera()
+            let vc = self.storyboard!.instantiateViewController(withIdentifier: "chooseLanguage") as! ChooseLanguageViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+            
         }
         
         let sobre =  UIAlertAction(title: "Sobre", style: .default) { UIAlertAction in
@@ -109,7 +112,8 @@ class HomeViewController: UIViewController {
         }
         
         let logOut =  UIAlertAction(title: "Logout", style: .default) { UIAlertAction in
-            self.dismiss(animated: true, completion: nil)
+            self.defaults.set(0, forKey: "logado")
+            _ = self.navigationController?.popToRootViewController(animated: false)
         }
         
         

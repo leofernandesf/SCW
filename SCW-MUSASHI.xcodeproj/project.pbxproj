@@ -11,6 +11,7 @@
 		B30494741DD3698D002FA2B6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30494731DD3698D002FA2B6 /* HomeViewController.swift */; };
 		B30494761DD3729C002FA2B6 /* SobreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30494751DD3729C002FA2B6 /* SobreViewController.swift */; };
 		B30494781DD374FE002FA2B6 /* MyCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30494771DD374FE002FA2B6 /* MyCellCollectionViewCell.swift */; };
+		B30A681B1DDA5AE90097038E /* EncaminharTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30A681A1DDA5AE90097038E /* EncaminharTableViewCell.swift */; };
 		B386794D1DD21E8200803D3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386794C1DD21E8200803D3B /* AppDelegate.swift */; };
 		B38679521DD21E8200803D3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B38679501DD21E8200803D3B /* Main.storyboard */; };
 		B38679551DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B38679531DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld */; };
@@ -21,6 +22,10 @@
 		B386797E1DD2348D00803D3B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386797D1DD2348D00803D3B /* LoginViewController.swift */; };
 		B38679801DD2350400803D3B /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = B386797F1DD2350400803D3B /* Layout.swift */; };
 		B38679821DD23AF400803D3B /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38679811DD23AF400803D3B /* Helper.swift */; };
+		B389002D1DD9FB4F003949FC /* PopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B389002C1DD9FB4F003949FC /* PopUpViewController.swift */; };
+		B38900311DDA0E98003949FC /* atribuirTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38900301DDA0E98003949FC /* atribuirTableViewCell.swift */; };
+		B38900331DDA397F003949FC /* atribuirTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38900321DDA397F003949FC /* atribuirTableViewCell2.swift */; };
+		B38900721DDA43DA003949FC /* Cell3TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B38900711DDA43DA003949FC /* Cell3TableViewCell.swift */; };
 		B3892DE61DD4A7050073C738 /* DetalhesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892DE51DD4A7050073C738 /* DetalhesViewController.swift */; };
 		B3892E251DD4B49F0073C738 /* EncaminharViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */; };
 		B3892E271DD4BE310073C738 /* AtribuirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3892E261DD4BE310073C738 /* AtribuirViewController.swift */; };
@@ -51,6 +56,7 @@
 		B30494731DD3698D002FA2B6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		B30494751DD3729C002FA2B6 /* SobreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SobreViewController.swift; sourceTree = "<group>"; };
 		B30494771DD374FE002FA2B6 /* MyCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		B30A681A1DDA5AE90097038E /* EncaminharTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncaminharTableViewCell.swift; sourceTree = "<group>"; };
 		B38679491DD21E8200803D3B /* SCW-MUSASHI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SCW-MUSASHI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B386794C1DD21E8200803D3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B38679511DD21E8200803D3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -67,6 +73,10 @@
 		B386797D1DD2348D00803D3B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		B386797F1DD2350400803D3B /* Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
 		B38679811DD23AF400803D3B /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		B389002C1DD9FB4F003949FC /* PopUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpViewController.swift; sourceTree = "<group>"; };
+		B38900301DDA0E98003949FC /* atribuirTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = atribuirTableViewCell.swift; sourceTree = "<group>"; };
+		B38900321DDA397F003949FC /* atribuirTableViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = atribuirTableViewCell2.swift; sourceTree = "<group>"; };
+		B38900711DDA43DA003949FC /* Cell3TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cell3TableViewCell.swift; sourceTree = "<group>"; };
 		B3892DE51DD4A7050073C738 /* DetalhesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetalhesViewController.swift; sourceTree = "<group>"; };
 		B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncaminharViewController.swift; sourceTree = "<group>"; };
 		B3892E261DD4BE310073C738 /* AtribuirViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AtribuirViewController.swift; sourceTree = "<group>"; };
@@ -123,6 +133,8 @@
 		B386794B1DD21E8200803D3B /* SCW-MUSASHI */ = {
 			isa = PBXGroup;
 			children = (
+				B389002F1DDA0E82003949FC /* Atribuir */,
+				B389002E1DDA0E2A003949FC /* Encaminhar */,
 				B3A2EAFB1DD61438008C0936 /* Detalhes */,
 				B3A2EAFA1DD6140D008C0936 /* Home */,
 				B3A2EAF91DD613EF008C0936 /* Helpers */,
@@ -135,9 +147,8 @@
 				B386795B1DD21E8200803D3B /* Info.plist */,
 				B38679531DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld */,
 				B30494751DD3729C002FA2B6 /* SobreViewController.swift */,
-				B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */,
-				B3892E261DD4BE310073C738 /* AtribuirViewController.swift */,
 				B3A2EAF51DD609C2008C0936 /* ComentarViewController.swift */,
+				B389002C1DD9FB4F003949FC /* PopUpViewController.swift */,
 			);
 			path = "SCW-MUSASHI";
 			sourceTree = "<group>";
@@ -158,6 +169,24 @@
 				B38679711DD21E8200803D3B /* Info.plist */,
 			);
 			path = "SCW-MUSASHIUITests";
+			sourceTree = "<group>";
+		};
+		B389002E1DDA0E2A003949FC /* Encaminhar */ = {
+			isa = PBXGroup;
+			children = (
+				B3892E241DD4B49F0073C738 /* EncaminharViewController.swift */,
+				B30A681A1DDA5AE90097038E /* EncaminharTableViewCell.swift */,
+			);
+			name = Encaminhar;
+			sourceTree = "<group>";
+		};
+		B389002F1DDA0E82003949FC /* Atribuir */ = {
+			isa = PBXGroup;
+			children = (
+				B3892E261DD4BE310073C738 /* AtribuirViewController.swift */,
+				B38900301DDA0E98003949FC /* atribuirTableViewCell.swift */,
+			);
+			name = Atribuir;
 			sourceTree = "<group>";
 		};
 		B3A2EAF71DD613C3008C0936 /* Login */ = {
@@ -200,6 +229,8 @@
 			children = (
 				B3892DE51DD4A7050073C738 /* DetalhesViewController.swift */,
 				B3A2EAFC1DD615DC008C0936 /* Cell1TableViewCell.swift */,
+				B38900321DDA397F003949FC /* atribuirTableViewCell2.swift */,
+				B38900711DDA43DA003949FC /* Cell3TableViewCell.swift */,
 			);
 			name = Detalhes;
 			sourceTree = "<group>";
@@ -344,9 +375,14 @@
 				B386797E1DD2348D00803D3B /* LoginViewController.swift in Sources */,
 				B3892E291DD4EAA40073C738 /* HomeTableViewCell.swift in Sources */,
 				B3892E251DD4B49F0073C738 /* EncaminharViewController.swift in Sources */,
+				B30A681B1DDA5AE90097038E /* EncaminharTableViewCell.swift in Sources */,
 				B38679801DD2350400803D3B /* Layout.swift in Sources */,
 				B38679821DD23AF400803D3B /* Helper.swift in Sources */,
+				B38900311DDA0E98003949FC /* atribuirTableViewCell.swift in Sources */,
+				B389002D1DD9FB4F003949FC /* PopUpViewController.swift in Sources */,
 				B30494721DD353DF002FA2B6 /* ChooseLanguageViewController.swift in Sources */,
+				B38900721DDA43DA003949FC /* Cell3TableViewCell.swift in Sources */,
+				B38900331DDA397F003949FC /* atribuirTableViewCell2.swift in Sources */,
 				B3A2EAFD1DD615DC008C0936 /* Cell1TableViewCell.swift in Sources */,
 				B38679551DD21E8200803D3B /* SCW_MUSASHI.xcdatamodeld in Sources */,
 				B30494781DD374FE002FA2B6 /* MyCellCollectionViewCell.swift in Sources */,
